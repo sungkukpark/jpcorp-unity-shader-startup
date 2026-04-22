@@ -39,7 +39,27 @@ Shader "Custom/MySurfaceShader"
         {
             // Albedo comes from a texture tinted by color
             fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;
-            o.Albedo = float4(1, 0, 0, 1);
+
+            // o.Albedo = float4(1, 0, 0, 1);
+
+            // Red
+            o.Emission = float4(1, 0, 0, 1);
+
+            // Black
+            // o.Emission = float4(1, 0, 0, 1) * float4(0, 1, 1, 1);
+
+            // Grey
+            o.Emission = float4(0.5, 0.5, 0.5, 1);
+
+            // Dark Grey
+            o.Emission = float4(0.5, 0.5, 0.5, 1) * float4(0.5, 0.5, 0.5, 1);
+
+            // Yellow
+            // o.Emission = float4(1, 0, 0, 1) + float4(0, 1, 0, 1);
+
+            // White
+            // o.Emission = float4(1, 0, 0, 1) + float4(0, 1, 0, 1) + float4(0, 0, 1, 1);
+
             o.Alpha = c.a;
         }
         ENDCG
