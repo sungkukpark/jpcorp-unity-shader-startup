@@ -4,7 +4,7 @@ Shader "Custom/TexSurface"
     {
         // 2D, Cube, 3D types require "default" {} syntax.
         // {} was for texture options but is now unused.
-        _BaseMap ("Albedo (RGB)", 2D) = "white" {}
+        _MainTex ("Albedo (RGB)", 2D) = "white" {}
     }
     SubShader
     {
@@ -16,16 +16,16 @@ Shader "Custom/TexSurface"
         CGPROGRAM
         #pragma surface surf Standard fullforwardshadows
 
-        sampler2D _BaseMap;
+        sampler2D   _MainTex;
 
         struct Input
         {
-            float2 uv_BaseMap;
+            float2 uv_MainTex;
         };
 
         void surf (Input IN, inout SurfaceOutputStandard o)
         {
-            fixed4 c = tex2D (_BaseMap, IN.uv_BaseMap);
+            fixed4 c = tex2D(_MainTex, IN.uv_MainTex);
             o.Albedo = c.rgb;
             o.Alpha = c.a;
         }
