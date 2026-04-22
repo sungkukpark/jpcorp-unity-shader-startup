@@ -85,7 +85,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BlendFactor: 0.498
+    - _BlendFactor: 0
     - _Blue: 1
     - _Brightness: 0
     - _BumpScale: 1
