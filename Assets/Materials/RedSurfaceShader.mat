@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MySurfaceShader
-  m_Shader: {fileID: 4800000, guid: 54287ef2e6a2b834492fb4461603018c, type: 3}
+  m_Name: RedSurfaceShader
+  m_Shader: {fileID: 4800000, guid: 996bc03e0bfcbc949a57eb0cc3d17b88, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
