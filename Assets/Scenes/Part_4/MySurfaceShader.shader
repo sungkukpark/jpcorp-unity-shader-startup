@@ -2,8 +2,21 @@ Shader "Custom/MySurfaceShader"
 {
     Properties
     {
-        _Color ("Color", Color) = (1,1,1,1)
+        [Header(Float Properties)]
+        _RangedFloat ("Range", Range(0,1)) = 0.5
+        _Float ("Float", Float) = 0.5
+        _Int ("Int", Int) = 1
+
+        [Header(Float Properties)]
+        _Color ("Color", Color) = (1, 1, 1, 1)
+        _Vector ("Vector", Vector) = (0, 0, 0, 0)
+
+        [Header(Other Sampler Properties)]
         _MainTex ("Albedo (RGB)", 2D) = "white" {}
+        _Rect ("Rect", 2D) = "white" {}
+        _Cube ("Cubemap", Cube) = "" {}
+        _3DTex ("3D Texture", 3D) = "" {}
+
         _Glossiness ("Smoothness", Range(0,1)) = 0.5
         _Metallic ("Metallic", Range(0,1)) = 0.0
     }
