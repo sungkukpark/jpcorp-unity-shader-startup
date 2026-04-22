@@ -1,11 +1,12 @@
-Shader "Custom/MySurfaceShader"
+Shader "Custom/ColorSurfaceShader"
 {
     Properties
     {
         _MainTex ("Albedo (RGB)", 2D) = "white" {}
         _Color ("Color", Color) = (1, 1, 1, 1)
-        _Glossiness ("Smoothness", Range(0,1)) = 0.5
-        _Metallic ("Metallic", Range(0,1)) = 0.0
+        _Glossiness ("Smoothness", Range(0, 1)) = 0.5
+        _Metallic ("Metallic", Range(0, 1)) = 0.0
+        _Brightness ("Brightness", Range(-1, 1)) = 0.0
     }
     SubShader
     {
@@ -20,6 +21,7 @@ Shader "Custom/MySurfaceShader"
         #pragma target 3.0
 
         sampler2D _MainTex;
+        float _Brightness;
 
         struct Input
         {
@@ -40,25 +42,7 @@ Shader "Custom/MySurfaceShader"
             // Albedo comes from a texture tinted by color
             fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;
 
-            // o.Albedo = float4(1, 0, 0, 1);
-
-            // Red
-            o.Emission = float4(1, 0, 0, 1);
-
-            // Black
-            // o.Emission = float4(1, 0, 0, 1) * float4(0, 1, 1, 1);
-
-            // Grey
-            // o.Emission = float4(0.5, 0.5, 0.5, 1);
-
-            // Dark Grey
-            // o.Emission = float4(0.5, 0.5, 0.5, 1) * float4(0.5, 0.5, 0.5, 1);
-
-            // Yellow
-            // o.Emission = float4(1, 0, 0, 1) + float4(0, 1, 0, 1);
-
-            // White
-            // o.Emission = float4(1, 0, 0, 1) + float4(0, 1, 0, 1) + float4(0, 0, 1, 1);
+            o.Albedo = c.rgb + _Brightness;
 
             o.Alpha = c.a;
         }
