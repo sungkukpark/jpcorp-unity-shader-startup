@@ -15,7 +15,7 @@ Shader "Custom/BareboneSurface"
         }
 
         CGPROGRAM
-        #pragma surface surf Standard fullforwardshadows
+        #pragma surface surf Standard
 
         struct Input
         {

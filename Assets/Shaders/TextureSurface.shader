@@ -1,4 +1,4 @@
-Shader "Custom/TexSurface"
+Shader "Custom/TextureSurface"
 {
     Properties
     {
