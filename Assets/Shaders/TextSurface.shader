@@ -15,7 +15,7 @@ Shader "Custom/TexSurface"
         }
 
         CGPROGRAM
-        #pragma surface surf Standard fullforwardshadows
+        #pragma surface surf Standard
 
         sampler2D   _MainTex;
         fixed       _Desaturation;
